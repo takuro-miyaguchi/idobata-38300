@@ -1,16 +1,38 @@
-<div class='main'>
-
-  <%# 画面上部の「IDOBATAのコンセプト」記述部分 %>
-  <div class='title-contents'>
-    <h1 class='service-title'>
-      インターネットでも見つからない情報共有アプリ
+<div class="main">
+  <header class="page-header wrapper">
+    <h1>
+      <%= link_to root_path do %>
+        <%= image_tag "idobata.png" ,class:"ido-img"  %>
+      <% end %>
     </h1>
-    <p class='service-explain'>
-      近所の病院・パン屋さん・学習塾・かわいい雑貨屋さん・保育園・美容院…実際のところどうなの？という情報
-    </p>
-    <p class='service-explain'>
-      そんな知りたい情報をともだちと共有できるアプリです
-    </p>
+
+    <% if user_signed_in? %>
+    <nav>
+      <ul class="main-nav">
+        <li><%= link_to "マイページ", root_path, method: :get, class: "mypage-btn" %></li>
+        <li><%= link_to "ログアウト", root_path, method: :get, class: "logout-btn" %></li>
+      </ul>
+    </nav>
+    <% else %>
+    <nav>
+      <ul class="main-nav">
+        <li><%= link_to "ログイン", root_path, method: :get, class: "login-btn" %></li>
+        <li><%= link_to "新規登録", root_path, method: :get, class: "new-registration-btn" %></li>
+      </ul>
+    </nav>
+    <% end %>
+  </header>
+
+  <% if user_signed_in? %>
+  <div class="home-content wrapper">
+    <h2 class="page-title">IDOBATA</h2>
+    <p class="sub-title">お茶会で聞いた情報を友達と共有できるアプリ</p>
+    <a class="button" href="">新規投稿</a>
   </div>
-  <%# /画面上部の「IDOBATAのコンセプト」記述部分  %>
+  <% else %>
+  <div class="home-content wrapper">
+    <h2 class="page-title">IDOBATA</h2>
+    <p class="sub-title">お茶会で聞いた情報を友達と共有できるアプリ</p>
+  </div>
+  <% end %>
 </div>

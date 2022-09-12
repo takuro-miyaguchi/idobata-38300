@@ -10,9 +10,11 @@
   },
   "version": "0.1.0",
   "devDependencies": {
+    "@prettier/plugin-ruby": "^3.2.0",
+    "prettier": "^2.7.1",
     "webpack-dev-server": "^4.11.0"
   },
-  "engines" : {
+  "engines": {
     "node": "14.20.0"
   }
 }
