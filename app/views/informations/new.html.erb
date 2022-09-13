@@ -1,0 +1,36 @@
+<div class="contents row">
+  <div class="information_new">
+    <h3>新規投稿</h3>
+    <%= form_with(model: @information, url: new_information_path, local: true ) do |form| %>
+
+      <div class="field">
+        <%= form.label :title, "タイトル" %><br />
+        <%= form.text_field :title, placeholder: "例：○○病院、□□幼稚園" %>
+      </div>
+
+      <div class="field">
+        <%= form.label :category_id, "カテゴリー" %><br />
+        <%= form.text_field :category_id, placeholder: "プルダウンにする" %>
+      </div>
+
+      <div class="field">
+        <%= form.label :image, "URL" %><br />
+        <%= form.text_field :image, placeholder: "URL" %>
+      </div>
+
+      <div class="field">
+        <%= form.label :subtitle, "項目" %><br />
+        <%= form.text_field :subtitle, placeholder: "例：夏期講習のスケジュール" %>
+      </div>
+
+      <div class="field">
+        <%= form.label :text, "項目" %><br />
+        <%= form.text_area :text, placeholder: "項目に沿って記述してください" %>
+      </div>
+
+      <div class="actions">
+        <%= form.submit "投稿する" %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+/* ログイン画面 */
+
+.session_new {
+  line-height: 1.7;
+  padding: 5px 0;
+  margin: 15px 0;
+  text-align: center;
+}
+
+.field {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+/* 最後の行に以下を追加 */
+.field_with_errors {
+  display: contents;
+}

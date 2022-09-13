@@ -1,0 +1,14 @@
+<div class="contents row">
+  <%
+=begin%>
+ <% @informations.each do |information| %>
+    <div class="content_post" style="background-image: url(<%= information.image %>);">
+      <p><%= information.text %></p>
+      <span class="title">
+        <%= information.title %>
+      </span>
+    </div>
+  <% end %>
+<%
+=end%>
+</div>
