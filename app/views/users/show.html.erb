@@ -1,14 +1,16 @@
-<div class="contents row">
-  <%
-=begin%>
- <% @informations.each do |information| %>
-    <div class="content_post" style="background-image: url(<%= information.image %>);">
-      <p><%= information.text %></p>
-      <span class="title">
-        <%= information.title %>
-      </span>
+<h1>記事一覧</h1>
+<%= link_to "投稿する", root_path, class:"post" %>
+
+<% @informations.each do |information| %>
+  <div class="user_show">
+    <div class="information-category">
+      <%= information.category.name %>
     </div>
-  <% end %>
-<%
-=end%>
-</div>
+    <div class="information-title">
+      <%= information.title %>
+    </div>
+    <div class="information-text">
+      <%= information.text %>
+    </div>
+  </div>
+<% end %>

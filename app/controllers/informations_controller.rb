@@ -2,7 +2,6 @@ class InformationsController < ApplicationController
   before_action :set_information, only: [:edit, :show]
 
   def index
-    @informations = Information.all
   end
 
   def new
@@ -10,7 +9,12 @@ class InformationsController < ApplicationController
   end
 
   def create
-    Information.create(information_params)
+    @information = Information.new(information_params)
+    if @information.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def destroy

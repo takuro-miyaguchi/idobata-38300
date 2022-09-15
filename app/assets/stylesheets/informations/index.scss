@@ -23,39 +23,45 @@
   }
 }
 
+// 共通部分
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: "Yu Gothic Medium", "游ゴシック Medium", "YuGothic",
+    "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-serif;
+  line-height: 1.7;
+}
+
 a {
   text-decoration: none;
 }
 
-.main {
-  background-color: radial-gradient(#c7d3b6, #ffe600);
-  font-size: 100%;
-  font-family: "Yu Gothic Medium", "游ゴシック Medium", "YuGothic",
-    "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-serif;
-  line-height: 1.7;
-  color: #432;
+img {
+  max-width: 100%;
 }
 
-img {
-  max-width: 20%;
+// 大きな背景画像
+.big-bg {
+  background-size: cover;
+  background-position: center top;
+  font-size: 100%;
+}
+
+#home {
+  background-image: url("teatime01.jpg");
+  min-height: 100vh;
+}
+
+#home .page-title {
+  text-transform: none;
 }
 
 // ヘッダー
-
-.page-header {
-  display: flex;
-  justify-content: space-between;
-}
-
-.wrapper {
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 0 4%;
-}
-
-.logo {
-  width: 210px;
-  margin-top: 14px;
+.idobata-img {
+  width: 80px;
+  margin-top: 20px;
 }
 
 .main-nav {
@@ -75,33 +81,50 @@ img {
   color: #0bd;
 }
 
-// 見出し
+.page-header {
+  display: flex;
+  justify-content: space-between;
+}
 
+.wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 4%;
+}
+
+// ホーム
 .home-content {
+  color: #ffffff;
   text-align: center;
   margin-top: 10%;
 }
 
+.home-content p {
+  font-size: 1.125rem;
+  margin: 0;
+}
+
+// 見出し
 .page-title {
-  font-size: 70px;
+  font-size: 120px;
   font-family: "Hannotate SC", serif;
   text-transform: uppercase;
   font-weight: normal;
-  margin-bottom: 0;
+  padding: 0;
 }
 
 .sub-title {
-  font-size: 30px;
-  margin-top: 0;
+  font-size: 40px;
 }
 
+// ボタン
 .button {
   font-size: 1.375rem;
   background: #0bd;
   color: #fff;
   border-radius: 5px;
-  padding: 18px 32px;
-  margin: auto 15px;
+  padding: 0;
+  margin: 0;
 }
 .button:hover {
   background: #0090aa;

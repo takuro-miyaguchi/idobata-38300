@@ -1,35 +1,48 @@
 <div class="contents row">
   <div class="information_new">
     <h3>新規投稿</h3>
-    <%= form_with(model: @information, url: new_information_path, local: true ) do |form| %>
+    <%= form_with(model: @information, url: new_information_path, local: true ) do |f| %>
 
-      <div class="field">
-        <%= form.label :title, "タイトル" %><br />
-        <%= form.text_field :title, placeholder: "例：○○病院、□□幼稚園" %>
+      <div class="title">
+        <%= f.label :title, "タイトル" %><br />
+        <%= f.text_field :title, placeholder: "例：○○病院、□□幼稚園" %>
       </div>
 
-      <div class="field">
-        <%= form.label :category_id, "カテゴリー" %><br />
-        <%= form.text_field :category_id, placeholder: "プルダウンにする" %>
+      <div class="category">
+        <%= f.label :category_id, "カテゴリー" %><br />
+        <%# f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category-select"}) %>
+        <%# f.text_field :category_id, placeholder: "プルダウンにする" %>
+        <select class="category-select" name="information[category_id]" id="information_category_id">
+          <option value="1">---</option>
+          <option value="2">幼稚園・保育園</option>
+          <option value="3">学校</option>
+          <option value="4">習い事</option>
+          <option value="5">店舗</option>
+          <option value="6">施設</option>
+          <option value="7">病院</option>
+          <option value="8">理髪店・美容室</option>
+          <option value="9">サービス</option>
+          <option value="10">その他</option>
+        </select>
       </div>
 
-      <div class="field">
-        <%= form.label :image, "URL" %><br />
-        <%= form.text_field :image, placeholder: "URL" %>
+      <div class="image">
+        <%= f.label :image, "ホームページ等" %><br />
+        <%= f.text_field :image, placeholder: "URLを貼る" %>
       </div>
 
-      <div class="field">
-        <%= form.label :subtitle, "項目" %><br />
-        <%= form.text_field :subtitle, placeholder: "例：夏期講習のスケジュール" %>
+      <div class="subtitle">
+        <%= f.label :subtitle, "項目" %><br />
+        <%= f.text_field :subtitle, placeholder: "例：夏期講習のスケジュール" %>
       </div>
 
-      <div class="field">
-        <%= form.label :text, "項目" %><br />
-        <%= form.text_area :text, placeholder: "項目に沿って記述してください" %>
+      <div class="text">
+        <%= f.label :text, "情報内容" %><br />
+        <%= f.text_area :text, placeholder: "項目に沿って記述してください" %>
       </div>
 
-      <div class="actions">
-        <%= form.submit "投稿する" %>
+      <div class="btn">
+        <%= f.submit "投稿する" %>
       </div>
     <% end %>
   </div>

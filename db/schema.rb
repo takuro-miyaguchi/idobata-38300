@@ -53,8 +53,6 @@ ActiveRecord::Schema.define(version: 2022_09_13_051030) do
     t.integer "prefecture_id", null: false
     t.string "municipality", null: false
     t.string "address", null: false
-    t.float "latitude", null: false
-    t.float "longitude", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

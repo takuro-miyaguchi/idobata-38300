@@ -1,5 +1,18 @@
 class UsersController < ApplicationController
 
+  def index
+  end
+
+  def new
+    @information = Information.new
+  end
+
+  def create
+  end
+
+  def destroy
+  end
+
   def edit
   end
 
@@ -12,6 +25,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @informations = Information.order("created_at DESC")
     # user = User.find(params[:id])
     # @nickname = current_user.nickname
     # @informations = current_user.informations

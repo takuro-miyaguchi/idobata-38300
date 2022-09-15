@@ -1,8 +1,47 @@
 .information_new {
-  line-height: 1.7;
-  padding: 5px 0;
-  margin: 15px 0;
   font-size: 20px;
-  margin: 10px 0;
-  text-align: center;
+  color: #432;
+  height: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title {
+  height: 30px;
+  width: 300px;
+  margin-bottom: 50px;
+}
+
+.category {
+  height: 80px;
+  width: 300px;
+}
+
+.image {
+  height: 100px;
+  width: 400px;
+}
+
+.subtitle {
+  height: 80px;
+  width: 400px;
+}
+
+.text {
+  height: 80px;
+  width: 400px;
+  resize: none;
+  margin-bottom: 20px;
+}
+
+.btn {
+  width: 200px;
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid white;
+  background-color: orange;
+  color: white;
+  justify-content: center;
 }

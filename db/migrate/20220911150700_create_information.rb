@@ -2,7 +2,7 @@ class CreateInformation < ActiveRecord::Migration[6.0]
   def change
     create_table :information do |t|
       t.string     :title      , null: false
-      t.string     :category_id, null: false
+      t.integer    :category_id, null: false
       t.string     :image      , null: false
       t.string     :subtitle   , null: false
       t.text       :text       , null: false
