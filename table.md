@@ -22,15 +22,14 @@
 
 ## informations テーブル
 
-| Column      | Type       | Options                        |
-| ----------- | ---------- | ------------------------------ |
-| title       | string     | null: false                    |
-| category_id | integer    | null: false                    |
-| image       | string     | null: false                    |
-| subtitle    | string     | null: false                    |
-| text        | text       | null: false                    |
-| user        | references | null: false, foreign_key: true |
-| status      | string     | null: false                    |
+| Column   | Type       | Options                        |
+| -------- | ---------- | ------------------------------ |
+| title    | string     | null: false                    |
+| category | integer    | null: false, enum              |
+| image    | string     |                                |
+| text     | text       | null: false                    |
+| user     | references | null: false, foreign_key: true |
+| status   | string     | null: false                    |
 
 ### Association
 
@@ -56,7 +55,7 @@
 | ----------- | ------- | ----------- |
 | follower_id | integer | null: false |
 | followee_id | integer | null: false |
-| status      | string  | null: false |
+| status      | integer | null: false |
 
 ### Association
 

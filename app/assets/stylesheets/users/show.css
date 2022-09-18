@@ -1,38 +1,84 @@
-h1 {
-  text-align: center;
+.user_header {
+  border-top: 10px solid #f9e900;
 }
 
-.post {
-  display: block;
-  width: 150px;
-  padding: 10px;
-  border: 1px solid white;
-  background-color: orange;
-  color: white;
-  text-decoration: none;
-  text-align: center;
+.w_inner {
+  width: 1200px;
   margin: 0 auto;
   margin-bottom: 20px;
 }
 
-.user_show {
-  height: 200px;
-  background-color: lightgray;
+.user_logo {
+  text-align: center;
+  margin: 30px auto;
+}
+.user_logo img {
+  display: inline-block;
+  width: 80px;
+  margin: 15px auto;
+}
+
+.user_header ul {
   display: flex;
-  align-items: center;
-  flex-direction: column;
-  border: 1px solid #fff;
-  padding: 20px;
 }
-
-.information-category {
-  font-size: 16px;
-  border: 1px solid;
-  padding: 5px;
-  background-color: lightblue;
-}
-
-.information-title {
+.user_header ul li {
   font-size: 20px;
+  width: 600px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.teatime-img {
+  text-align: center;
+  width: 100%;
+  height: 370px;
+  object-fit: cover;
+  margin-bottom: 50px;
+}
+
+.post_list .post_block {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.post_list .post {
+  width: 380px;
+  text-align: center;
+}
+
+.post_list h2 {
+  text-align: center;
   font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.post_list .post_block img {
+  margin-bottom: 20px;
+}
+
+.post_list .post_block .title {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.post_list .post_block .explain {
+  margin-bottom: 25px;
+}
+
+.post_list .post_block .show-page {
+  background: #79a1b1;
+  color: #fff;
+  padding: 15px 20px 12px;
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
 }

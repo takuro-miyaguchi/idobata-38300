@@ -1,48 +1,30 @@
 <div class="contents row">
   <div class="information_new">
-    <h3>新規投稿</h3>
-    <%= form_with(model: @information, url: new_information_path, local: true ) do |f| %>
+    <h2>新規投稿</h2>
+    <%= form_with(model: @information, url: informations_path,local: true, class:"form") do |f|%>
 
       <div class="title">
         <%= f.label :title, "タイトル" %><br />
-        <%= f.text_field :title, placeholder: "例：○○病院、□□幼稚園" %>
+        <%= f.text_field :title, placeholder: "例：○○病院、□□幼稚園", class: "form form-title" %>
       </div>
 
       <div class="category">
-        <%= f.label :category_id, "カテゴリー" %><br />
-        <%# f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category-select"}) %>
-        <%# f.text_field :category_id, placeholder: "プルダウンにする" %>
-        <select class="category-select" name="information[category_id]" id="information_category_id">
-          <option value="1">---</option>
-          <option value="2">幼稚園・保育園</option>
-          <option value="3">学校</option>
-          <option value="4">習い事</option>
-          <option value="5">店舗</option>
-          <option value="6">施設</option>
-          <option value="7">病院</option>
-          <option value="8">理髪店・美容室</option>
-          <option value="9">サービス</option>
-          <option value="10">その他</option>
-        </select>
+        <%= f.label :category, "カテゴリー" %><br />
+        <%= f.select :category, options_for_select(Information.categories), {prompt: "---"}, class: "form form-category"%>
       </div>
 
       <div class="image">
         <%= f.label :image, "ホームページ等" %><br />
-        <%= f.text_field :image, placeholder: "URLを貼る" %>
-      </div>
-
-      <div class="subtitle">
-        <%= f.label :subtitle, "項目" %><br />
-        <%= f.text_field :subtitle, placeholder: "例：夏期講習のスケジュール" %>
+        <%= f.text_field :image, placeholder: "URLを貼る", class: "form form-image" %>
       </div>
 
       <div class="text">
         <%= f.label :text, "情報内容" %><br />
-        <%= f.text_area :text, placeholder: "項目に沿って記述してください" %>
+        <%= f.text_area :text, rows: 5, placeholder: "項目に沿って記述してください", class: "form form-text" %>
       </div>
 
       <div class="btn">
-        <%= f.submit "投稿する" %>
+        <%= f.submit "投稿する", class: "form form-btn"%>
       </div>
     <% end %>
   </div>

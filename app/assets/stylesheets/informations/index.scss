@@ -36,6 +36,7 @@ body {
 
 a {
   text-decoration: none;
+  color: #432;
 }
 
 img {
@@ -94,14 +95,13 @@ img {
 
 // ホーム
 .home-content {
-  color: #ffffff;
+  color: #00aaff;
   text-align: center;
   margin-top: 10%;
 }
 
 .home-content p {
   font-size: 1.125rem;
-  margin: 0;
 }
 
 // 見出し
@@ -110,11 +110,14 @@ img {
   font-family: "Hannotate SC", serif;
   text-transform: uppercase;
   font-weight: normal;
+  vertical-align: bottom;
   padding: 0;
+  height: 160px;
 }
 
 .sub-title {
-  font-size: 40px;
+  margin: 0 auto;
+  width: 420px;
 }
 
 // ボタン

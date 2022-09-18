@@ -11,7 +11,7 @@ class InformationsController < ApplicationController
   def create
     @information = Information.new(information_params)
     if @information.save
-      redirect_to root_path
+      redirect_to user_path("mypage")
     else
       render :new
     end
@@ -29,6 +29,7 @@ class InformationsController < ApplicationController
   def update
     information = Information.find(params[:id])
     information.update(information_params)
+    redirect_to information_path(information)
   end
 
   def show
@@ -37,8 +38,11 @@ class InformationsController < ApplicationController
 
   private
   def information_params
-    params.require(:information).permit(:title, :category_id, :image, :subtitle, :text, :status).merge(user_id: current_user.id)
+    data = params.require(:information).permit(:title, :category, :image, :text, :status).merge(user_id: current_user.id)
+    data[:category] = data[:category].to_i
+    return data
   end
+
 
   def set_information
     @information = Information.find(params[:id])

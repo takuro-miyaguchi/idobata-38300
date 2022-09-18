@@ -2,15 +2,15 @@
   <header class="page-header wrapper">
     <h1>
       <%= link_to root_path do %>
-        <%= image_tag "idobata.png" ,class:"idobata-img"  %>
+        <%= image_tag "idobata.png" ,class:"idobata-img" %>
       <% end %>
     </h1>
 
     <% if user_signed_in? %>
     <nav>
       <ul class="main-nav">
-        <li><%= link_to "マイページ", user_path, method: :get, class: "mypage-btn" %></li>
-        <li><%= link_to "ログアウト", root_path, method: :get, class: "logout-btn" %></li>
+        <li><%= link_to "マイページ", user_path("mypage"), method: :get, class: "mypage-btn" %></li>
+        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout-btn" %></li>
       </ul>
     </nav>
     <% else %>
@@ -23,16 +23,9 @@
     <% end %>
   </header>
 
-  <% if user_signed_in? %>
-  <div class="home-content wrapper">
-    <h2 class="page-title">IDOBATA</h2>
-    <p class="sub-title">お茶会で聞いた情報を友達と共有できるアプリ</p>
-    <a class="button" href="">新規投稿</a>
-  </div>
-  <% else %>
   <div class="home-content wrapper">
     <h2 class="page-title">IDOBATA</h2>
     <p class="sub-title">お茶会で聞いた情報を友達と共有できるアプリ</p>
   </div>
-  <% end %>
+
 </div>

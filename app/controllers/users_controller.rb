@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   def new
-    @information = Information.new
+    @information = Information.new()
   end
 
   def create
@@ -14,6 +14,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = current_user
   end
 
   def update
@@ -25,10 +26,13 @@ class UsersController < ApplicationController
   end
 
   def show
-    @informations = Information.order("created_at DESC")
-    # user = User.find(params[:id])
-    # @nickname = current_user.nickname
-    # @informations = current_user.informations
+    if params[:id] == "mypage"
+      @user = current_user
+    else
+      @user = User.find(params[:id])
+    end
+    # @user = params[:id] == "mypage"? current_user : User.find(params[:id])
+    @informations = @user.informations.page(params[:page]).reverse_order
   end
 
   def user_params
