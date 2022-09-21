@@ -1,5 +1,6 @@
 class InformationsController < ApplicationController
-  # before_action :set_information, only: [:edit, :show]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_information, only: [:edit, :show]
 
   def index
   end
@@ -23,7 +24,6 @@ class InformationsController < ApplicationController
   end
 
   def edit
-    @information = Information.find(params[:id])
   end
 
   def update
@@ -35,7 +35,6 @@ class InformationsController < ApplicationController
   def show
     # # params
     # # params[:user_id]
-    @information = Information.find(params[:id])
     # @information = Information.find(34)
     # @information = Information.find_by(title: "gtkww")
   end

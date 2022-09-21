@@ -8,7 +8,7 @@ IDOBATA
 
 # URL
 
-デプロイ済みの URL
+https://idobata-38300.herokuapp.com/
 
 # テスト用アカウント
 
@@ -49,11 +49,11 @@ IDOBATA
 
 # データベース設計
 
-ER 図を貼る。
+[![Image from Gyazo](https://i.gyazo.com/6caa396ac0a2cd02ca9dad4c20003711.png)](https://gyazo.com/6caa396ac0a2cd02ca9dad4c20003711)
 
 # 画面遷移図
 
-貼る。
+[![Image from Gyazo](https://i.gyazo.com/a78e1485b7ecb93bfe245c41146d1d76.png)](https://gyazo.com/a78e1485b7ecb93bfe245c41146d1d76)
 
 # 開発環境
 
