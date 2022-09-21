@@ -7,9 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
   User.create!(
     nickname: Faker::Name.first_name,
-    email: Faker::Internet.email,
+    email: "a@a",
     password: "test1234",
-    prefecture_id: 2,
+    prefecture_id: 3,
     municipality: "aa",
     address: "aa"
   )
@@ -19,7 +19,7 @@
     nickname: Faker::Name.first_name,
     email: Faker::Internet.email,
     password: "a1" + Faker::Lorem.characters(number: 5),
-    prefecture_id: 2,
+    prefecture_id: 3,
     municipality: "aa",
     address: "aa"
   )
@@ -30,6 +30,6 @@ end
     title: Faker::Lorem.characters(number: 5),
     category: 0,
     text: Faker::Lorem.characters(number: 5),
-    user_id: 2
+    user_id: 1
   )
 end

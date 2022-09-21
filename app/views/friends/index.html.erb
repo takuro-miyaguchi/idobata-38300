@@ -1,0 +1,32 @@
+<h1>フォロー申請中リスト</h1>
+<% @apply_friends.each do |friend| %>
+  <% user = friend.followee %>
+  <%= user.id %>
+  <%= user.nickname %>
+  <%= link_to "フォロー申請を外す", user_friends_path(user.id), method: :delete %>
+  <br>
+<% end %>
+
+<br>
+<br>
+
+<h1>フォロー承認待ちリスト</h1>
+<% @applied_friends.each do |friend| %>
+  <% user = friend.follower %>
+  <%= user.id %>
+  <%= user.nickname %>
+  <%= link_to "申請を許可する", user_friends_path(user.id), method: :patch %>
+  <%= link_to "申請を拒否する",  user_friends_path(user.id), method: :delete  %>
+  <br>
+<% end %>
+
+<br>
+<br>
+
+<h1>友達リスト</h1>
+<% @myfriend_users.each do |user| %>
+  <%= user.id %>
+  <%= user.nickname %>
+  <%= link_to "絶交する",  user_friends_path(user.id), method: :delete  %>
+  <br>
+<% end %>
