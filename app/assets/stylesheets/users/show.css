@@ -38,12 +38,11 @@
 
 .post_list .post_block {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
 }
 
 .post_list .post {
-  width: 380px;
+  width: 33.3%;
   text-align: center;
 }
 
@@ -55,17 +54,17 @@
 }
 
 .post_list .post_block img {
-  margin-bottom: 20px;
+  margin: 20px auto 10px;
 }
 
 .post_list .post_block .title {
   font-weight: bold;
   font-size: 18px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .post_list .post_block .explain {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .post_list .post_block .show-page {

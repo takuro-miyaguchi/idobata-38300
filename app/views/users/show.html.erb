@@ -17,6 +17,16 @@
         <%= link_to "プロフィール編集", edit_user_path("mypage"), method: :get, class: "item-red-btn"
         %>
       </li>
+      <li>
+        <%= link_to "友達一覧", friends_path(current_user), method: :get, class: "item-red-btn"
+        %>
+      </li>
+      <li>
+        <%= form_with url: user_search_path, method: :get,local: true  do |f| %>
+          <%= f.text_field :search_word, class: "search-btn" %>
+          <%= f.submit "search"%>
+        <% end %>
+      </li>
     <% else %>
       <% if current_user.following?(@user) %>
         <%= link_to "フォロー外す", user_friends_path(@user.id), method: :delete %>
@@ -27,16 +37,20 @@
   </ul>
 </div>
 <div class="posts w_inner">
-  <div><%= image_tag "teatime01.jpg" ,class:"teatime-img" %></div>
+  <div><%= image_tag "teatime01.jpg", class:"teatime-img" %></div>
   <div class="post_list">
     <h2>投稿一覧</h2>
     <div class="post_block">
       <% @informations.each do |info| %>
           <div class="post">
-            <%= image_tag "ido.png" ,class:"information-img" %>
+            <% if info.images.attached? %>
+              <%= image_tag info.images[0].variant(resize:'400x300').processed %> <br>
+            <% else %>
+              <%= image_tag "ido.png",size: '400x300', class:"info-show-img" %>
+            <% end %>
             <div class="title"><%= info.title %></div>
             <div class="explain"><%= info.category %></div>
-            <%= link_to '詳細ページ', "#", class: "show-page" %>
+            <%= link_to '詳細ページ', information_path(info), class: "show-page" %>
           </div>
       <% end %>
     </div>
