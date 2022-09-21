@@ -1,5 +1,5 @@
 class InformationsController < ApplicationController
-  before_action :set_information, only: [:edit, :show]
+  # before_action :set_information, only: [:edit, :show]
 
   def index
   end
@@ -33,16 +33,19 @@ class InformationsController < ApplicationController
   end
 
   def show
+    # # params
+    # # params[:user_id]
     @information = Information.find(params[:id])
+    # @information = Information.find(34)
+    # @information = Information.find_by(title: "gtkww")
   end
 
   private
   def information_params
-    data = params.require(:information).permit(:title, :category, :image, :text, :status).merge(user_id: current_user.id)
+    data = params.require(:information).permit(:title, :category, :text, :status, images: []).merge(user_id: current_user.id)
     data[:category] = data[:category].to_i
     return data
   end
-
 
   def set_information
     @information = Information.find(params[:id])

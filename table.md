@@ -4,7 +4,7 @@
 
 | Column             | Type    | Options                   |
 | ------------------ | ------- | ------------------------- |
-| nickname           | string  | null: false               |
+| nickname           | string  | null: false, unique: true |
 | email              | string  | null: false, unique: true |
 | encrypted_password | string  | null: false               |
 | prefecture_id      | integer | null: false               |
@@ -26,7 +26,7 @@
 | -------- | ---------- | ------------------------------ |
 | title    | string     | null: false                    |
 | category | integer    | null: false, enum              |
-| image    | string     |                                |
+| images   | string     |                                |
 | text     | text       | null: false                    |
 | user     | references | null: false, foreign_key: true |
 | status   | string     | null: false                    |
