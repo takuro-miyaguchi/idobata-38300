@@ -1,0 +1,46 @@
+/* プロフィール編集画面 */
+
+.edit-img {
+  width: 30%;
+  margin: 20px 35% 10px;
+}
+
+.user_edit {
+  color: #432;
+  height: 900px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 30%;
+  margin: 0 auto;
+}
+
+h2 {
+  font: bold;
+  font-size: 30px;
+  margin: 0 auto 25px;
+}
+
+.edit {
+  font-size: 16px;
+  width: 100%;
+  margin: 0 auto 15px;
+}
+
+.select-box {
+  width: 100%;
+  height: 30px;
+  margin-bottom: 15px;
+}
+
+.edit-btn {
+  width: 44%;
+  background-color: orange;
+  color: white;
+  margin: 10px auto;
+  display: block;
+}
+
+.delete {
+  margin: 30px auto 0;
+}

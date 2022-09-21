@@ -1,50 +1,55 @@
 <div class="contents row">
   <div class="registration_new">
+    <h1>
+      <%= link_to root_path do %>
+        <%= image_tag "idobata.png", class:"regest-img" %>
+      <% end %>
+    </h1>
     <h2>新規登録画面</h2>
     <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
-      <div class="field">
+      <div class="nickname">
         <%= f.label :nickname, "ニックネーム" %><br />
-        <%= f.text_field :nickname, autofocus: true %>
+        <%= f.text_field :nickname, autofocus: true, class: "regest regest-nickname" %>
       </div>
 
-      <div class="field">
+      <div class="email">
         <%= f.label :email, "メールアドレス" %><br />
-        <%= f.email_field :email %>
+        <%= f.email_field :email, class: "regest regest-email" %>
       </div>
 
-      <div class="field">
+      <div class="password">
         <%= f.label :password, "パスワード" %>
         <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <em>(<%= @minimum_password_length %>文字以上)</em>
         <% end %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
+        <%= f.password_field :password, autocomplete: "off", class: "regest regest-password" %>
       </div>
 
-      <div class="field">
+      <div class="password">
         <%= f.label :password_confirmation, "パスワード（確認）" %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        <%= f.password_field :password_confirmation, autocomplete: "off", class: "regest regest-nickname" %>
       </div>
 
-      <div class="field">
+      <div class="prefecture">
         <%= f.label :prefecture_id, "都道府県" %><br />
         <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"information-prefecture"}) %>
         <%# f.text_field :prefecture_id %>
       </div>
 
-      <div class="field">
+      <div class="municipality">
         <%= f.label :municipality, "市町村" %><br />
-        <%= f.text_field :municipality %>
+        <%= f.text_field :municipality, class: "regest regest-municipality" %>
       </div>
 
-      <div class="field">
+      <div class="address">
         <%= f.label :address, "番地" %><br />
-        <%= f.text_field :address %>
+        <%= f.text_field :address, class: "regest regest-address" %>
       </div>
 
       <div class="actions">
-        <%= f.submit "新規登録" %>
+        <%= f.submit "新規登録", class: "regest regest-btn" %>
       </div>
     <% end %>
   </div>

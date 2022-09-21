@@ -1,16 +1,44 @@
 /* 新規登録画面 */
 
-.registration_new {
-  color: #432;
-  line-height: 1.7;
-  padding: 5px 0;
-  margin: 15px 0;
-  text-align: center;
+.regest-img {
+  width: 30%;
+  margin: 20px 40% 10px;
 }
 
-.field {
-  font-size: 20px;
-  margin: 10px 0;
+.registration_new {
+  color: #432;
+  height: 800px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 30%;
+  margin: 0 auto;
+}
+
+h2 {
+  font: bold;
+  font-size: 30px;
+  margin: 0 auto 25px;
+}
+
+.regest {
+  font-size: 16px;
+  width: 100%;
+  margin: 0 auto 15px;
+}
+
+.select-box {
+  width: 100%;
+  height: 30px;
+  margin-bottom: 15px;
+}
+
+.regest-btn {
+  width: 44%;
+  background-color: orange;
+  color: white;
+  margin: 10px auto;
+  display: block;
 }
 
 /* 最後の行に以下を追加 */

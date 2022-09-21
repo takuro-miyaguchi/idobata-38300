@@ -1,26 +1,31 @@
 <div class="contents row">
   <div class="session_new">
+    <h1>
+      <%= link_to root_path do %>
+        <%= image_tag "idobata.png" ,class:"login-img" %>
+      <% end %>
+    </h1>
     <h2>ログイン画面</h2>
     <%= form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f| %>
-      <div class="field">
+      <div class="email">
         <%= f.label :email, "メールアドレス" %><br />
-        <%= f.email_field :email, autofocus: true %>
+        <%= f.email_field :email, autofocus: true, class: "login login-address" %>
       </div>
 
-      <div class="field">
+      <div class="password">
         <%= f.label :password, "パスワード" %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
+        <%= f.password_field :password, autocomplete: "off", class: "login login-password" %>
       </div>
 
       <% if devise_mapping.rememberable? %>
-        <div class="field">
-          <%= f.label :remember_me, "ログイン状態を保存する" %><br />
+        <div class="remember">
+          <%= f.label :remember_me, "ログイン状態を保存する", class: "login login-remember" %><br />
           <%= f.check_box :remember_me %>
         </div>
-      <% end -%>
+      <% end %>
 
       <div class="actions">
-        <%= f.submit "ログイン" %>
+        <%= f.submit "ログイン", class: "login login-btn2" %>
       </div>
     <% end %>
   </div>

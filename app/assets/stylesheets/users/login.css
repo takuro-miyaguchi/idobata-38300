@@ -1,17 +1,42 @@
 /* ログイン画面 */
 
+.login-img {
+  width: 30%;
+  margin: 20px 40% 10px;
+}
+
 .session_new {
   color: #432;
-  font-size: 20px;
-  line-height: 1.7;
-  padding: 5px 0;
-  margin: 15px 0;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 30%;
+  margin: 0 auto;
+}
+
+h2 {
+  font: bold;
+  font-size: 30px;
+  margin: 0 auto 25px;
+}
+
+.login {
+  font-size: 16px;
+  width: 100%;
+  margin: 0 auto 15px;
+}
+
+.remember {
   text-align: center;
 }
 
-.field {
-  font-size: 17px;
-  margin: 10px 0;
+.login-btn2 {
+  width: 44%;
+  background-color: orange;
+  color: white;
+  margin: 10px auto;
+  display: block;
 }
 
 /* 最後の行に以下を追加 */
