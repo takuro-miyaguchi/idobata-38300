@@ -1,16 +1,20 @@
 class UsersController < ApplicationController
 
   def index
+    @users = User.all
+    # @Informations = current_user.like_informations() likeのindexaction
   end
 
   def new
     @information = Information.new()
   end
 
-  def create
-  end
-
-  def destroy
+  def search
+    if User.where(nickname: params[:search_word]).exists?
+      @user = User.find_by(nickname: params[:search_word])
+    else
+      redirect_to user_path("mypage")
+    end
   end
 
   def edit
