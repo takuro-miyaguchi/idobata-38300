@@ -1,50 +1,35 @@
-<div class="information-show">
-  <div class="information-box">
-    <h2 class="name">
+<div class="info-show">
+  <div class="info-box">
+    <h2 class="title">
       <%= @information.title %>
     </h2>
 
     <div class="info-show">
       <% if @information.images.attached? %>
         <% @information.images.each do |image| %>
-          <%= image_tag image.variant(resize:'400x400').processed %> <br>
+          <%= image_tag image.variant(resize:'400x300').processed %> <br>
         <% end %>
       <% else %>
         <%= image_tag "ido.png", class:"info-show-img" %>
       <% end %>
-      <div class="explain"><%= @information.category %></div>
-      <div class="text"><%= @information.text %></div>
+      <div class="info-show-category"><%= @information.category %></div>
+      <div class="info-show-text"><%= @information.text %></div>
     </div>
 
     <% if current_user.id == @information.user_id %>
-      <%= link_to "情報の編集", edit_information_path, method: :get, class: "information-red-btn" %>
+      <%= link_to "情報の編集", edit_information_path, method: :get, class: "info-edit" %>
       <p class="or-text">or</p>
-      <%= link_to "削除", information_path(@information.id), method: :delete, class:"information-destroy" %>
+      <%= link_to "削　除", information_path(@information.id), method: :delete, class:"info-destroy" %>
     <% end %>
 
-    <div class="option">
+    <div class="favorite">
       <div class="favorite-btn">
         <%# image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
-        <span>お気に入り 0</span>
-      </div>
-      <div class="report-btn">
-        <%# image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
+        <span>お気に入り</span>
       </div>
     </div>
-  </div>
-
-  <div class="comment-box">
-    <form>
-      <textarea class="comment-text"></textarea>
-      <p class="comment-warn">
-        相手のことを考え丁寧なコメントを心がけましょう。
-        <br>
-        不快な言葉遣いなどは利用制限や退会処分となることがあります。
-      </p>
-      <button type="submit" class="comment-btn">
-        <%# image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
-        <span>コメントする<span>
-      </button>
-    </form>
+    <div>
+      <%= link_to "マイページに戻る", user_path("mypage"), method: :get, class: "mypage-btn" %>
+    </div>
   </div>
 </div>
