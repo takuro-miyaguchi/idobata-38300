@@ -19,12 +19,8 @@
     </div>
 
     <div class="password">
-      <%= f.label :password, "新しいパスワード" %><br />
+      <%= f.label :password, "新しいパスワード（英数6文字以上）" %><br />
       <%= f.password_field :password, autocomplete: "new-password", class: "edit edit-newpass" %>
-      <% if @minimum_password_length %>
-        <br />
-        <em>(英数<%=@minimum_password_length %>文字以上)</em>
-      <% end %>
     </div>
 
     <div class="password">

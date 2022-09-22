@@ -20,10 +20,7 @@
       </div>
 
       <div class="password">
-        <%= f.label :password, "パスワード" %>
-        <% if @minimum_password_length %>
-          <em>(英数<%= @minimum_password_length %>文字以上)</em>
-        <% end %><br />
+        <%= f.label :password, "パスワード（英数6文字以上）" %><br />
         <%= f.password_field :password, autocomplete: "off", class: "regest regest-password" %>
       </div>
 

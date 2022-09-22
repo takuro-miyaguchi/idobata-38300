@@ -37,7 +37,7 @@ https://idobata-38300.herokuapp.com/
 
 # 洗い出した要件
 
-要件定義シートを貼る
+https://docs.google.com/spreadsheets/d/1bl6MWWOzIXdcKljwRM7sf31gOLss9I-mJAU0xVjSL60/edit#gid=982722306
 
 # 実装した機能についての画像や GIF およびその説明
 
@@ -66,13 +66,13 @@ https://idobata-38300.herokuapp.com/
 # ローカルでの動作方法
 
 以下のコマンドの順に実行。
-%
-%
-%
-%
+% git clone https://github.com/trackmaintenance/idobata-38300
+% cd idobata-38300
+% bundle install
+% yarn install
 
 # 工夫したポイント
 
 実際にママ友に使用してもらい、フィードバックをもらった。
 レスポンシブデザインの設定にしている。
-現役エンジニアに適正価格を支払いレビューして頂いた。
+現役エンジニアに適正価格を支払いメンターやレビューして頂いた。

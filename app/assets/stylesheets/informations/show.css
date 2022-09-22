@@ -28,7 +28,6 @@
   height: 50vh;
   width: 60vw;
   min-height: 500px;
-  /* background-color: rgb(205, 202, 202); */
   object-fit: contain;
 }
 
@@ -38,6 +37,10 @@
 
 .info-show-text {
   white-space: pre-wrap;
+}
+
+.favorite-btn {
+  font-size: 45px;
 }
 
 .info-edit {
@@ -61,7 +64,7 @@
   text-align: center;
   font-size: 20px;
   color: black;
-  margin: 20px 0px;
+  margin: 20px 0px 30px;
   width: 230px;
   height: 70px;
   line-height: 70px;
@@ -73,17 +76,24 @@
   position: relative;
 }
 
-.favorite-btn {
-  border-radius: 40px;
-  width: 160px;
-  color: rgb(249, 75, 0);
-  border: 2px solid #ffb340;
+.open {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto 40px;
+  justify-content: space-around;
+}
+.open-btn {
+  text-align: center;
+  width: 100px;
+  border-radius: 10px;
+  background-color: crimson;
+  color: aliceblue;
+  margin: 30px;
 }
 
-.favorite-star-icon {
-  margin-right: 5px;
+.nonopen-btn {
+  text-align: center;
+  width: 100px;
+  border-radius: 10px;
+  background-color: gray;
+  color: #432;
+  margin: 30px;
 }
