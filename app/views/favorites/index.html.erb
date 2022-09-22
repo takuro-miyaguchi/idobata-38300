@@ -1,0 +1,40 @@
+<div class="user_header w_inner">
+  <div class="user_logo">
+    <%= link_to image_tag("idobata.png", class:"idobata-icon"), root_path %>
+    <h1><%= "#{@user.nickname}さんのお気に入り情報" %></h1>
+  </div>
+  <ul>
+    <% if current_user.id == @user.id %>
+      <li>
+        <%= form_with url: user_search_path, method: :get,local: true  do |f| %>
+          <%= f.text_field :search_word, placeholder: "ニックネーム入力", class: "search-btn" %>
+          <%= f.submit "友達を検索"%>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+<div class="posts w_inner">
+  <div><%= image_tag "teatime01.jpg", class:"teatime-img" %></div>
+  <div class="post_list">
+    <h2>お気に入り情報一覧</h2>
+    <div class="post_block">
+      <% @favorites.each do |favorite| %>
+          <% info = favorite.information %>
+          <div class="post">
+            <% if info.images.attached? %>
+              <%= image_tag info.images[0].variant(resize:'400x300').processed %> <br>
+            <% else %>
+              <%= image_tag "ido.png",size: '400x300' %>
+            <% end %>
+            <div class="title"><%= info.title %></div>
+            <div class="explain"><%= info.category %></div>
+            <%= link_to '詳細ページ', information_path(info), class: "show-page" %>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="page">
+  <%= paginate @favorites %>
+</div>

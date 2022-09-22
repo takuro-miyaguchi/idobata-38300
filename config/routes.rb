@@ -6,5 +6,8 @@ Rails.application.routes.draw do
     resource :friends, only: [:create, :destroy, :update]
   end
   root to: "informations#index"
-  resources :informations
+  get 'informations/favorites' => 'favorites#index', as: 'favorites'
+  resources :informations do
+    resource :favorites, only: [:create, :destroy]
+  end
 end

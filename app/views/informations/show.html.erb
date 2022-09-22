@@ -16,20 +16,42 @@
       <div class="info-show-text"><%= @information.text %></div>
     </div>
 
+    <div class="favorite">
+      <div class="favorite-btn">
+        <% if @information.favorited?(current_user) %>
+          <%# 一致するレコードが存在する＝すでにいいね済みの場合はdestroyアクションへ %>
+          <%= link_to information_favorites_path(@information.id), method: :delete do %>
+            <span style="color:red;">❤︎</span>
+          <% end %>
+        <% else %>
+          <%# 一致するレコードが存在しない＝まだいいねしていない場合はcreateアクションへ %>
+          <%= link_to information_favorites_path(@information.id), method: :post do %>
+            <span>❤︎</span>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
     <% if current_user.id == @information.user_id %>
       <%= link_to "情報の編集", edit_information_path, method: :get, class: "info-edit" %>
       <p class="or-text">or</p>
       <%= link_to "削　除", information_path(@information.id), method: :delete, class:"info-destroy" %>
+      <div class = "open">
+        <%= form_with(model: @information, url: information_path,local: true, class:"open") do |f|%>
+          <%= f.hidden_field :status, :value => 1 %>
+          <%= f.submit "公開", class: "open-btn"%>
+        <% end %>
+
+        <%= form_with(model: @information, url: information_path,local: true, class:"open") do |f|%>
+          <%= f.hidden_field :status, :value => 0 %>
+          <%= f.submit "非公開", class: "nonopen-btn"%>
+        <% end %>
+      </div>
     <% end %>
 
-    <div class="favorite">
-      <div class="favorite-btn">
-        <%# image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
-        <span>お気に入り</span>
-      </div>
-    </div>
     <div>
       <%= link_to "マイページに戻る", user_path("mypage"), method: :get, class: "mypage-btn" %>
     </div>
+
   </div>
 </div>
