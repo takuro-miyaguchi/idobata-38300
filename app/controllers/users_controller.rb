@@ -1,17 +1,14 @@
 class UsersController < ApplicationController
 
-  def index
-    @users = User.all
-    # @Informations = current_user.like_informations() likeのindexaction
-  end
-
-  def new
-    @information = Information.new()
-  end
-
   def search
     if User.where(nickname: params[:search_word]).exists?
       @user = User.find_by(nickname: params[:search_word])
+
+      if current_user == @user
+        @informations = @user.informations.page(params[:page]).reverse_order
+      else
+        @informations = @user.informations.where(status: 1).page(params[:page]).reverse_order
+      end
     else
       redirect_to user_path("mypage")
     end
@@ -35,8 +32,16 @@ class UsersController < ApplicationController
     else
       @user = User.find(params[:id])
     end
-    # @user = params[:id] == "mypage"? current_user : User.find(params[:id])
-    @informations = @user.informations.page(params[:page]).reverse_order
+
+    unless current_user == @user || current_user.myfriend?(@user)
+      redirect_to user_path("mypage")
+    end
+
+    if current_user == @user
+      @informations = @user.informations.page(params[:page]).reverse_order
+    else
+      @informations = @user.informations.where(status: 1).page(params[:page]).reverse_order
+    end
   end
 
   def user_params

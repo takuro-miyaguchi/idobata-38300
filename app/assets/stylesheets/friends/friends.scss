@@ -1,0 +1,36 @@
+.friends-mypage {
+  margin: 30px auto 5px 20px;
+  width: 180px;
+  text-align: center;
+  border-radius: 20px;
+  border: 2px solid #ffb340;
+  color: #432;
+}
+
+.friends {
+  display: flex;
+  margin: 30px auto 5px 40px;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+.follower-list {
+  margin: 0 20px;
+}
+
+.followee-list {
+  margin: 0 20px;
+}
+
+.friends-list {
+  margin: 0 20px;
+}
+
+.friends-box {
+  width: 350px;
+  height: 600px;
+  border: 2px solid #432;
+  color: #432;
+}

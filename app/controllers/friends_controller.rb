@@ -4,16 +4,19 @@ class FriendsController < ApplicationController
     current_user.follow(params[:user_id])
     redirect_to request.referer
   end
+
   # フォロー承認するとき status: 1
   def update
     current_user.approve(params[:user_id])
     redirect_to request.referer
   end
+
   # フォロー外すとき
   def destroy
     current_user.unfollow(params[:user_id])
     redirect_to request.referer
   end
+
   def index
     # byebug
     user = User.find(params[:id])
@@ -23,6 +26,7 @@ class FriendsController < ApplicationController
     # # 友達リスト
     @myfriend_users = user.myfriend_users
   end
+
   # # フォロー一覧
   # def followings
   #   user = User.find(params[:user_id])

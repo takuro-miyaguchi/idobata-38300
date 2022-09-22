@@ -6,8 +6,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :informations, dependent: :destroy
-  has_many :friends
-  has_many :favorites
+  has_many :favorites, dependent: :destroy
   has_many :group_users
 
   # フォローをした、されたの関係
@@ -47,13 +46,16 @@ class User < ApplicationRecord
     return users
   end
 
-  def like_informations()
-    informations = []
-    favorites.each do |favorite|
-      informations << favorite.information
+  def myfriend?(user)
+    if friends.where(followee_id: user.id).exists?
+      return friends.find_by(followee_id: user.id).status == 1
+    elsif reverse_of_friends.where(follower_id: user.id).exists?
+      return reverse_of_friends.find_by(follower_id: user.id).status == 1
+    else
+      return false
     end
-    return informations
   end
+
 
   # フォロー申請したときの処理
   def follow(user_id)
@@ -61,12 +63,13 @@ class User < ApplicationRecord
   end
   # フォロー承認したときの処理
   def approve(user_id)
-    friends.find_by(follower_id: user_id).update(status: 1)
+    reverse_of_friends.find_by(follower_id: user_id).update(status: 1)
   end
+
   # フォローを外すときの処理
   def unfollow(user_id)
     friends.find_by(followee_id: user_id).destroy if followings.exists?
-    friends.find_by(follower_id: user_id).destroy if followers.exists?
+    reverse_of_friends.find_by(follower_id: user_id).destroy if followers.exists?
   end
   # フォローしているか判定
   def following?(user)
@@ -75,8 +78,8 @@ class User < ApplicationRecord
 
   # 承認しているか判定
   def apply?(user)
-    if followers.include?(user)
-      return friends.find_by(follower_id: user.id).status
+    if followings.include?(user)
+      return friends.find_by(followee_id: user.id).status
     end
     return -1
   end

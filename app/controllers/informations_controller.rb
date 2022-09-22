@@ -20,19 +20,34 @@ class InformationsController < ApplicationController
 
   def destroy
     information = Information.find(params[:id])
-    information.destroy
+    if information.user == current_user
+      information.destroy
+    end
+    redirect_to user_path("mypage")
   end
 
   def edit
+    unless information.user == current_user
+      redirect_to user_path("mypage")
+    end
   end
 
   def update
     information = Information.find(params[:id])
-    information.update(information_params)
+    if information.user == current_user
+      information.update(information_params)
+    end
     redirect_to information_path(information)
   end
 
   def show
+    # フレンドか判定
+    # if current_user.friends.find_by(information.user).status == 0
+    #   redirect_to user_path("mypage")
+    # end
+    unless current_user == @information.user || current_user.myfriend?(@information.user)
+      redirect_to user_path("mypage")
+    end
     # # params
     # # params[:user_id]
     # @information = Information.find(34)
