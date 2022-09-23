@@ -40,9 +40,14 @@ https://docs.google.com/spreadsheets/d/1bl6MWWOzIXdcKljwRM7sf31gOLss9I-mJAU0xVjS
 # 実装した機能についての画像や GIF およびその説明
 
 ・新規登録やユーザー編集、アカウント削除、ログイン、ログアウト
+　https://gyazo.com/6eeaebca21e48a2c930b5e366d589c49
 ・新規情報投稿、投稿内容編集、削除、友達に対する共有情報選択
+　https://gyazo.com/d7ec41ae4b84e7bac828187d70dd058e
+　https://gyazo.com/dc808896c15409535401324e2ccd8cdc
 ・友達検索、申請、承認、友達登録、友達投稿内容閲覧
+　https://gyazo.com/bf595e9c53bd7c77855f64d7d4dfa2e6
 ・自分や友達の情報お気に入り登録、お気に入り情報一覧表示
+　https://gyazo.com/6f17f4e2581e496e2a94cf0d05d0420b
 
 # 実装予定の機能
 
