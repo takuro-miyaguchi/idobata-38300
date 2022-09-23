@@ -36,15 +36,15 @@
       <%= link_to "情報の編集", edit_information_path, method: :get, class: "info-edit" %>
       <p class="or-text">or</p>
       <%= link_to "削　除", information_path(@information.id), method: :delete, class:"info-destroy" %>
-      <div class = "open">
-        <%= form_with(model: @information, url: information_path,local: true, class:"open") do |f|%>
+      <div class = "share">
+        <%= form_with(model: @information, url: information_path,local: true, class:"share") do |f|%>
           <%= f.hidden_field :status, :value => 1 %>
-          <%= f.submit "公開", class: "open-btn"%>
+          <%= f.submit "共有", class: "share-btn"%>
         <% end %>
 
-        <%= form_with(model: @information, url: information_path,local: true, class:"open") do |f|%>
+        <%= form_with(model: @information, url: information_path,local: true, class:"share") do |f|%>
           <%= f.hidden_field :status, :value => 0 %>
-          <%= f.submit "非公開", class: "nonopen-btn"%>
+          <%= f.submit "非共有", class: "unshare-btn"%>
         <% end %>
       </div>
     <% end %>

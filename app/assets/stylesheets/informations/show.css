@@ -76,11 +76,11 @@
   position: relative;
 }
 
-.open {
+.share {
   display: flex;
   justify-content: space-around;
 }
-.open-btn {
+.share-btn {
   text-align: center;
   width: 100px;
   border-radius: 10px;
@@ -89,7 +89,7 @@
   margin: 30px;
 }
 
-.nonopen-btn {
+.unshare-btn {
   text-align: center;
   width: 100px;
   border-radius: 10px;
