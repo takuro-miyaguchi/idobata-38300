@@ -80,5 +80,6 @@ https://docs.google.com/spreadsheets/d/1bl6MWWOzIXdcKljwRM7sf31gOLss9I-mJAU0xVjS
 
 # 工夫したポイント
 
+友達登録機能では、申請から取下げ・承認・拒否、承認待ち・友達登録の条件分岐で表示や制限を設定した。
 実際にママ友に使用してもらい、フィードバックをもらった。
 現役エンジニアに適正価格を支払いメンターやレビューして頂いた。
