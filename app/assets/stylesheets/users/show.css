@@ -20,6 +20,7 @@
 
 .user_header ul {
   display: flex;
+  list-style-type: none;
 }
 .user_header ul li {
   font-size: 20px;
