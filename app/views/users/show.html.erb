@@ -28,10 +28,20 @@
         <% end %>
       </li>
     <% else %>
-      <% if current_user.following?(@user) %>
-        <%= link_to "友達申請を外す", user_friends_path(@user.id), method: :delete, class: "follow-btn" %>
+      <% if @user.myfriend?(current_user) %>
+        <div  class="follow-btn">すでに友達です</div>
+        <%= link_to "絶交する", user_friends_path(@user.id), method: :delete, class: "follow-btn" %>
       <% else %>
-        <%= link_to "友達申請をする", user_friends_path(@user.id), method: :post, class: "follow-btn" %>
+        <% if @user.apply?(current_user) == 0 %>
+          <%= link_to "申請を承認する", user_friends_path(@user.id), method: :patch, class: "follow-btn" %>
+          <%= link_to "申請を拒否する", user_friends_path(@user.id), method: :delete, class: "follow-btn" %>
+        <% else %>
+          <% if current_user.following?(@user) %>
+            <%= link_to "友達申請を外す", user_friends_path(@user.id), method: :delete, class: "follow-btn" %>
+          <% else %>
+            <%= link_to "友達申請をする", user_friends_path(@user.id), method: :post, class: "follow-btn" %>
+          <% end %>
+        <% end %>
       <% end %>
     <% end %>
   </ul>
