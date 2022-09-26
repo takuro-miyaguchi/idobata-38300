@@ -27,7 +27,7 @@ class InformationsController < ApplicationController
   end
 
   def edit
-    unless information.user == current_user
+    unless @information.user == current_user
       redirect_to user_path("mypage")
     end
   end
