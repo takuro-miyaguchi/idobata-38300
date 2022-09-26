@@ -18,8 +18,11 @@ https://idobata-38300.herokuapp.com/
 <br>・メールアドレス：test2@gmail.com</br>
 <br>・パスワード：test22</br>
 <br>アカウント ②</br>
-<br>・メールアドレス：test3@gmail.com</br>
-<br>・パスワード：test33</br>
+<br>・メールアドレス：test4@gmail.com</br>
+<br>・パスワード：test44</br>
+<br>アカウント ③</br>
+<br>・メールアドレス：test6@gmail.com</br>
+<br>・パスワード：test66</br>
 
 # 利用方法
 
