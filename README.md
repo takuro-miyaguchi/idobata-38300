@@ -4,7 +4,7 @@ IDOBATA
 
 # アプリケーション概要
 
-日常会話で交換している地域の情報を共有し、必要な情報を収集することができる
+井戸端会議のような、お茶会など日常会話で交換しているインターネット上にない地域の情報を共有し、必要な情報を収集することができるアプリ。
 
 # URL
 
@@ -96,6 +96,8 @@ https://docs.google.com/spreadsheets/d/1bl6MWWOzIXdcKljwRM7sf31gOLss9I-mJAU0xVjS
 <br>% cd idobata-38300</br>
 <br>% bundle install</br>
 <br>% yarn install</br>
+<br>% rails db:setup</br>
+<br>% rails s</br>
 
 # 工夫したポイント
 
