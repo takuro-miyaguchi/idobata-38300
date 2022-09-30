@@ -56,7 +56,6 @@ class User < ApplicationRecord
     end
   end
 
-
   # フォロー申請したときの処理
   def follow(user_id)
     friends.create(status: 0,followee_id: user_id)
